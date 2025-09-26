@@ -1,0 +1,124 @@
+/* File: index.css hoặc App.css */
+
+/* --- 1. GLOBAL RESET VÀ THIẾT LẬP FONT --- */
+body {
+    margin: 0;
+    padding: 0;
+    /* Font hệ thống để đảm bảo trải nghiệm Native trên mọi nền tảng */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f7f6; /* Màu nền nhẹ nhàng, chuyên nghiệp */
+}
+
+/* --- 2. CONTAINER CHÍNH CỦA ỨNG DỤNG --- */
+.app-container {
+    padding: 20px;
+    max-width: 600px; /* Giới hạn chiều rộng cho trải nghiệm di động */
+    margin: 0 auto; /* Căn giữa trên màn hình lớn */
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* --- 3. KHU VỰC HIỂN THỊ MEME (IMAGE/CANVAS) --- */
+.meme-display-area {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng nổi bật */
+    border-radius: 8px;
+    overflow: hidden; 
+    background-color: #fff;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.meme-display-area img,
+.meme-display-area canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. KHU VỰC ĐIỀU KHIỂN (INPUTS VÀ BUTTONS) --- */
+.controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các thành phần */
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.controls-panel input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Quan trọng để padding không làm tràn width 100% */
+    font-size: 1em;
+}
+
+/* --- 5. STYLES CHO BUTTONS (TOUCH-FRIENDLY) --- */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-buttons button,
+.controls-panel button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    flex-grow: 1; /* Chia đều không gian cho các nút trong cùng một nhóm */
+    transition: background-color 0.2s, transform 0.1s;
+    outline: none;
+}
+
+/* Nút chính (Ví dụ: Chọn Ảnh, Tạo Meme) */
+.btn-primary {
+    background-color: #007aff; 
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+/* Nút phụ (Ví dụ: Lưu, Chia sẻ) */
+.btn-secondary {
+    background-color: #4cd964; 
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #3aa84f;
+}
+
+.action-buttons button:active,
+.controls-panel button:active {
+    transform: scale(0.98); /* Hiệu ứng nhấn nút */
+}
